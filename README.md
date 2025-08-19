@@ -6,17 +6,11 @@ I'm Yin Xie (yiyexy), a deep learning algorithm engineer specializing in compute
 
 
 
-## 🌱 Recent Activity
-
-<!--START_SECTION:activity-->
-<!-- Actual recent commits/PRs will be automatically updated if you use GitHub Actions -->
-<!--END_SECTION:activity-->
-
-
-
 ## 🏆 GitHub Stats
 
-![yiyexy's GitHub stats](https://github-readme-stats.vercel.app/api?username=yiyexy&show_icons=true&theme=radical)
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=yiyexy&show_icons=true&theme=radical" alt="yiyexy's GitHub stats">
+</p>
 
 <p align="center">
   <img src="https://count.getloli.com/get/@yiyexy?theme=booru-mjg" alt="Profile Views" />
