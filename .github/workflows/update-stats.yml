@@ -20,7 +20,10 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          set -e  # Exit on error
+
           # Get stars from owned repositories
+          echo "Fetching owned repository stars..."
           OWNED_STARS=$(gh api graphql -f query='
             query {
               user(login: "yiyexy") {
@@ -31,9 +34,16 @@ jobs:
                 }
               }
             }
-          ' --jq '.data.user.repositories.nodes | map(.stargazerCount) | add // 0')
+          ' --jq '.data.user.repositories.nodes | map(.stargazerCount) | add // 0' 2>&1)
+
+          # Validate OWNED_STARS is a number
+          if ! [[ "$OWNED_STARS" =~ ^[0-9]+$ ]]; then
+            echo "❌ Error: Failed to fetch owned repository stars"
+            exit 1
+          fi
 
           # Get stars from organization repositories
+          echo "Fetching organization repository stars..."
           ORG_STARS=$(gh api graphql -f query='
             query {
               user(login: "yiyexy") {
@@ -44,7 +54,13 @@ jobs:
                 }
               }
             }
-          ' --jq '.data.user.repositories.nodes | map(.stargazerCount) | add // 0')
+          ' --jq '.data.user.repositories.nodes | map(.stargazerCount) | add // 0' 2>&1)
+
+          # Validate ORG_STARS is a number
+          if ! [[ "$ORG_STARS" =~ ^[0-9]+$ ]]; then
+            echo "❌ Error: Failed to fetch organization repository stars"
+            exit 1
+          fi
 
           # Calculate total
           TOTAL_STARS=$((OWNED_STARS + ORG_STARS))
@@ -57,18 +73,31 @@ jobs:
           echo "  - Owned Repositories: $OWNED_STARS ⭐"
           echo "  - Organization Repositories: $ORG_STARS ⭐"
           echo "  - Total Stars: $TOTAL_STARS ⭐"
+          echo "  - Note: Limited to first 100 repos per category"
 
       - name: Update README
         run: |
           TOTAL_STARS="${{ steps.calculate.outputs.total_stars }}"
 
-          # Create a temporary badge URL
+          # Validate TOTAL_STARS is set
+          if [ -z "$TOTAL_STARS" ]; then
+            echo "❌ Error: TOTAL_STARS is empty"
+            exit 1
+          fi
+
+          # Create badge URL
           BADGE_URL="https://img.shields.io/badge/Total%20Stars%20(Owned%20%2B%20Managed)-${TOTAL_STARS}-yellow?style=flat-square"
 
-          # Update the README with the new badge
-          sed -i "s|!\[Total Stars\](https://img.shields.io/github/stars/yiyexy[^)]*)|![Total Stars](${BADGE_URL})|g" README.md
+          # Update the README with the new badge - match the correct pattern
+          sed -i "s|!\[Total Stars\](https://img.shields.io/badge/Total%20Stars%20(Owned%20%2B%20Managed)-[^)]*)|![Total Stars](${BADGE_URL})|g" README.md
 
-          echo "✅ README updated with $TOTAL_STARS total stars"
+          # Verify the update was successful
+          if grep -q "Total%20Stars%20(Owned%20%2B%20Managed)-${TOTAL_STARS}" README.md; then
+            echo "✅ README updated with $TOTAL_STARS total stars"
+          else
+            echo "❌ Error: Failed to update README"
+            exit 1
+          fi
 
       - name: Commit changes
         run: |
