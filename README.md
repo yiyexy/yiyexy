@@ -45,3 +45,7 @@ Feel free to reach out via email or connect with me here on GitHub!
 [![GitHub Streak](https://streak-stats.demolab.com?user=yiyexy&theme=radical)](https://github.com/DenverCoder1/github-readme-streak-stats)
 
 </div>
+
+---
+
+<sub>💡 The "Total Stars" badge is automatically updated weekly to include stars from all repositories I own and manage (including organization projects).</sub>
