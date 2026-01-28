@@ -31,8 +31,15 @@ Feel free to reach out via email or connect with me here on GitHub!
 
 <div align="center">
 
-[![GitHub Stats](https://github-readme-stats.vercel.app/api?username=yiyexy&show_icons=true&theme=radical&include_all_commits=true&count_private=true&include_orgs=true)](https://github.com/anuraghazra/github-readme-stats)
+### Personal Stats
+[![GitHub Stats](https://github-readme-stats.vercel.app/api?username=yiyexy&show_icons=true&theme=radical&include_all_commits=true&count_private=true)](https://github.com/anuraghazra/github-readme-stats)
 
+### Contribution Stats (Including Managed Projects)
+![Profile Views](https://komarev.com/ghpvc/?username=yiyexy&color=blueviolet&style=flat-square)
+![Followers](https://img.shields.io/github/followers/yiyexy?style=flat-square&color=blueviolet)
+![Total Stars](https://img.shields.io/github/stars/yiyexy?style=flat-square&color=yellow&affiliations=OWNER,COLLABORATOR,ORGANIZATION_MEMBER)
+
+### Language & Activity Stats
 [![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=yiyexy&layout=compact&theme=radical&langs_count=8)](https://github.com/anuraghazra/github-readme-stats)
 
 [![GitHub Streak](https://streak-stats.demolab.com?user=yiyexy&theme=radical)](https://github.com/DenverCoder1/github-readme-streak-stats)
