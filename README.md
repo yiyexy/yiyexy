@@ -35,6 +35,6 @@ Feel free to reach out via email or connect with me here on GitHub!
 
 [![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=yiyexy&layout=compact&theme=radical&langs_count=8)](https://github.com/anuraghazra/github-readme-stats)
 
-[![GitHub Streak](https://streak-stats.demolab.com?user=yiyexy&theme=radical)](https://git.io/streak-stats)
+[![GitHub Streak](https://streak-stats.demolab.com?user=yiyexy&theme=radical)](https://github.com/DenverCoder1/github-readme-streak-stats)
 
 </div>
