@@ -1,11 +1,4 @@
-# Hi there, I'm Yin Xie 👋
-
-<div align="center">
-
-[![Email](https://img.shields.io/badge/Email-yiye.xieyin%40gmail.com-red?style=flat-square&logo=gmail)](mailto:yiye.xieyin@gmail.com)
-[![GitHub](https://img.shields.io/badge/GitHub-yiyexy-181717?style=flat-square&logo=github)](https://github.com/yiyexy)
-
-</div>
+# Hi there, I'm Yin Xie 👋 [![Email](https://img.shields.io/badge/Email-yiye.xieyin%40gmail.com-red?style=flat-square&logo=gmail)](mailto:yiye.xieyin@gmail.com)
 
 ## 🚀 About Me
 
