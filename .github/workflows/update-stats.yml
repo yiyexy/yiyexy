@@ -1,0 +1,85 @@
+name: Update GitHub Stats
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # Run weekly on Sunday at midnight
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Calculate Total Stars
+        id: calculate
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Get stars from owned repositories
+          OWNED_STARS=$(gh api graphql -f query='
+            query {
+              user(login: "yiyexy") {
+                repositories(first: 100, ownerAffiliations: [OWNER]) {
+                  nodes {
+                    stargazerCount
+                  }
+                }
+              }
+            }
+          ' --jq '.data.user.repositories.nodes | map(.stargazerCount) | add // 0')
+          
+          # Get stars from organization repositories
+          ORG_STARS=$(gh api graphql -f query='
+            query {
+              user(login: "yiyexy") {
+                repositories(first: 100, ownerAffiliations: [ORGANIZATION_MEMBER]) {
+                  nodes {
+                    stargazerCount
+                  }
+                }
+              }
+            }
+          ' --jq '.data.user.repositories.nodes | map(.stargazerCount) | add // 0')
+          
+          # Calculate total
+          TOTAL_STARS=$((OWNED_STARS + ORG_STARS))
+          
+          echo "owned_stars=$OWNED_STARS" >> $GITHUB_OUTPUT
+          echo "org_stars=$ORG_STARS" >> $GITHUB_OUTPUT
+          echo "total_stars=$TOTAL_STARS" >> $GITHUB_OUTPUT
+          
+          echo "📊 Stars Summary:"
+          echo "  - Owned Repositories: $OWNED_STARS ⭐"
+          echo "  - Organization Repositories: $ORG_STARS ⭐"
+          echo "  - Total Stars: $TOTAL_STARS ⭐"
+      
+      - name: Update README
+        run: |
+          TOTAL_STARS="${{ steps.calculate.outputs.total_stars }}"
+          
+          # Create a temporary badge URL
+          BADGE_URL="https://img.shields.io/badge/Total%20Stars%20(Owned%20%2B%20Managed)-${TOTAL_STARS}-yellow?style=flat-square"
+          
+          # Update the README with the new badge
+          sed -i "s|!\[Total Stars\](https://img.shields.io/github/stars/yiyexy[^)]*)|![Total Stars](${BADGE_URL})|g" README.md
+          
+          echo "✅ README updated with $TOTAL_STARS total stars"
+      
+      - name: Commit changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add README.md
+          
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update GitHub stats: ${{ steps.calculate.outputs.total_stars }} total stars"
+            git push
+            echo "✅ Changes committed and pushed"
+          fi
