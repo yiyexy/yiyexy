@@ -31,7 +31,7 @@ Feel free to reach out via email or connect with me here on GitHub!
 
 <div align="center">
 
-[![GitHub Stats](https://github-readme-stats.vercel.app/api?username=yiyexy&show_icons=true&theme=radical&include_all_commits=true&count_private=true)](https://github.com/anuraghazra/github-readme-stats)
+![Anurag's GitHub stats](https://github-readme-stats-git-masterorgs-github-readme-stats-team.vercel.app/api?username=yiyexy&include_orgs=true)
 
 </div>
 
