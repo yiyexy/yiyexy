@@ -89,7 +89,7 @@ jobs:
           BADGE_URL="https://img.shields.io/badge/Total%20Stars%20(Owned%20%2B%20Managed)-${TOTAL_STARS}-yellow?style=flat-square"
 
           # Update the README with the new badge - match the correct pattern
-          sed -i "s|!\[Total Stars\](https://img.shields.io/badge/Total%20Stars%20(Owned%20%2B%20Managed)-[^)]*)|![Total Stars](${BADGE_URL})|g" README.md
+          sed -i "s|!\[Total Stars\](https://img\.shields\.io/badge/Total%20Stars%20(Owned%20%2B%20Managed)-[^)]*)|![Total Stars](${BADGE_URL})|g" README.md
 
           # Verify the update was successful
           if grep -q "Total%20Stars%20(Owned%20%2B%20Managed)-${TOTAL_STARS}" README.md; then

@@ -37,7 +37,7 @@ Feel free to reach out via email or connect with me here on GitHub!
 ### Contribution Stats
 ![Profile Views](https://komarev.com/ghpvc/?username=yiyexy&color=blueviolet&style=flat-square)
 ![Followers](https://img.shields.io/github/followers/yiyexy?style=flat-square&color=blueviolet)
-![Total Stars](https://img.shields.io/badge/Total%20Stars%20(Owned%20%2B%20Managed)-calculating...-yellow?style=flat-square)
+![Total Stars](https://img.shields.io/badge/Total%20Stars%20(Owned%20%2B%20Managed)-updating...-yellow?style=flat-square)
 
 ### Language & Activity Stats
 [![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=yiyexy&layout=compact&theme=radical&langs_count=8)](https://github.com/anuraghazra/github-readme-stats)
@@ -48,4 +48,4 @@ Feel free to reach out via email or connect with me here on GitHub!
 
 ---
 
-<sub>💡 The "Total Stars" badge is automatically updated weekly to include stars from all repositories I own and manage (including organization projects).</sub>
+<sub>💡 The "Total Stars" badge is automatically updated weekly via GitHub Actions to include stars from all repositories I own and manage (including organization projects). The count can also be manually refreshed at any time.</sub>
