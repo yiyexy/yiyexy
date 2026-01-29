@@ -31,10 +31,10 @@ Feel free to reach out via email or connect with me here on GitHub!
 
 <div align="center">
 
-[![GitHub Stats](https://github-readme-stats.vercel.app/api?username=yiyexy&show_icons=true&theme=radical&include_all_commits=true&count_private=true&show_owner=true)](https://github.com/anuraghazra/github-readme-stats)
+[![GitHub Stats](https://github-readme-stats.vercel.app/api?username=yiyexy&show_icons=true&theme=radical&include_all_commits=true&count_private=true)](https://github.com/anuraghazra/github-readme-stats)
 
 </div>
 
 ---
 
-<sub>💡 GitHub Stats include all commits and private repositories, including contributions to managed projects and organizations.</sub>
+<sub>💡 GitHub Stats include all commits and private repositories as reported by GitHub's API.</sub>
