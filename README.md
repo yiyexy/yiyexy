@@ -31,7 +31,7 @@ Feel free to reach out via email or connect with me here on GitHub!
 
 <div align="center">
 
-![Anurag's GitHub stats](https://github-readme-stats-git-masterorgs-github-readme-stats-team.vercel.app/api?username=yiyexy&include_orgs=true)
+![Yin Xie's GitHub stats](https://github-readme-stats.vercel.app/api?username=yiyexy&include_orgs=true)
 
 </div>
 
