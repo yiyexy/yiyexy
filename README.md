@@ -27,4 +27,4 @@ I'm always open to:
 
 Feel free to reach out via email or connect with me here on GitHub!
 
-[![Anurag's GitHub stats](https://github-readme-stats-git-masterorgs-github-readme-stats-team.vercel.app/api?username=yiyexy&include_orgs=true)](https://github.com/anuraghazra/github-readme-stats)
+![](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=yiyexy&theme=2077&count_private=true&include_all_commits=true)
